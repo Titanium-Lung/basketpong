@@ -1,12 +1,12 @@
 [gd_scene load_steps=18 format=4 uid="uid://jo6vqavbdbl"]
 
 [ext_resource type="PackedScene" uid="uid://b15tx8w4ae21b" path="res://Scenes/player.tscn" id="1_1kkd2"]
-[ext_resource type="Script" path="res://Scripts/Global.gd" id="1_iqshn"]
+[ext_resource type="Script" uid="uid://dktc6jdh72bqh" path="res://Scripts/Global.gd" id="1_iqshn"]
 [ext_resource type="Texture2D" uid="uid://con4isi3w0omi" path="res://Assets/floor-temp.png" id="2_ugfji"]
-[ext_resource type="Script" path="res://Scripts/middle_barrier.gd" id="4_llw6p"]
-[ext_resource type="Script" path="res://Scripts/Ball.gd" id="5_ugojq"]
-[ext_resource type="Script" path="res://wall.gd" id="6_4rqys"]
-[ext_resource type="Script" path="res://Scenes/paddle.gd" id="7_iinhh"]
+[ext_resource type="Script" uid="uid://dtdwcbvjcl4js" path="res://Scripts/middle_barrier.gd" id="4_llw6p"]
+[ext_resource type="Script" uid="uid://0d3kblemue4h" path="res://Scripts/Ball.gd" id="5_ugojq"]
+[ext_resource type="Script" uid="uid://bhp4p3j1pv44e" path="res://wall.gd" id="6_4rqys"]
+[ext_resource type="Script" uid="uid://48u68qey37rh" path="res://Scenes/paddle.gd" id="7_iinhh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olncf"]
 texture = ExtResource("2_ugfji")
