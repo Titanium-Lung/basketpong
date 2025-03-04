@@ -93,7 +93,7 @@ size = Vector2(25, 99)
 script = ExtResource("1_iqshn")
 
 [node name="Player1" parent="." instance=ExtResource("1_1kkd2")]
-position = Vector2(175, 538)
+position = Vector2(186, 495)
 jump = "jump_1"
 left = "left_1"
 right = "right_1"
@@ -112,7 +112,7 @@ script = ExtResource("4_llw6p")
 shape = SubResource("RectangleShape2D_cl8gq")
 
 [node name="Player2" parent="." instance=ExtResource("1_1kkd2")]
-position = Vector2(963, 518)
+position = Vector2(930, 488)
 jump = "jump_2"
 left = "left_2"
 right = "right_2"
@@ -120,8 +120,9 @@ throw = "throw_2"
 player = -1
 
 [node name="Ball" type="RigidBody2D" parent="."]
-position = Vector2(568, 261)
+position = Vector2(567, 232)
 collision_layer = 2
+mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_lta0x")
 script = ExtResource("5_ugojq")
 

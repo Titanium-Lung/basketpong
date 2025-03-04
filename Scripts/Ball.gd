@@ -2,7 +2,6 @@ extends RigidBody2D
 
 func _ready():
 	gravity_scale = 1
-	
 
 var holdingPlayer: CharacterBody2D = null
 
@@ -23,6 +22,6 @@ func throw(player: int):
 
 func moveball(player: int):
 	set_freeze_enabled(false)
-	linear_velocity = Vector2(player * 400, -400)
+	linear_velocity = Vector2(player * 700, -700)
 	holdingPlayer.isholding = false
 	holdingPlayer = null
