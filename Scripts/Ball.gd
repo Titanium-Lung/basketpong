@@ -1,8 +1,5 @@
 extends RigidBody2D
 
-func _ready():
-	gravity_scale = 1
-
 var holdingPlayer: CharacterBody2D = null
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -22,6 +19,6 @@ func throw(player: int):
 
 func moveball(player: int):
 	set_freeze_enabled(false)
-	linear_velocity = Vector2(player * 700, -700)
+	linear_velocity += Vector2(player * 700, -700)
 	holdingPlayer.isholding = false
 	holdingPlayer = null

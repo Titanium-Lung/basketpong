@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjy1xftlbworx"]
+
+[ext_resource type="Script" uid="uid://d7jmilsfj0ox" path="res://Scripts/instructions.gd" id="1_8p7yn"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8p7yn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.203322, 0.203322, 0.203322, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 48.0
+offset_right = 856.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 100
+text = "Instructions"
+
+[node name="InstructionsText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 187.0
+offset_right = 989.0
+offset_bottom = 510.0
+theme_override_font_sizes/font_size = 30
+text = "This is a mashup of Basketball and Pong
+Throw the ball to the wall on your opponents side to 
+score points, and use your paddle to block your 
+opponents throws."
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 458.0
+offset_right = 898.0
+offset_bottom = 628.0
+
+[node name="ControlsBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Controls"
+
+[node name="BackBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/ControlsBtn" to="." method="_on_controls_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackBtn" to="." method="_on_back_btn_pressed"]

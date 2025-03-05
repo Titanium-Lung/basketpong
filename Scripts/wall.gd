@@ -2,8 +2,8 @@ extends Area2D
 
 # determines which side of the court the ball goes to when a point is scored
 @export var wall: int
-var win_threshold: int = 1
-@onready var label = $"/root/Main/MainUI/Score label"
+var win_threshold: int = 10
+@onready var label: Label = $"/root/Main/MainUI/Score label"
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Ball":
