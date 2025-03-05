@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dt0un3o4ps06m"]
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 37.0
+offset_right = 873.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 50
+text = "0  0"
+horizontal_alignment = 1

@@ -1,12 +1,14 @@
-[gd_scene load_steps=18 format=4 uid="uid://jo6vqavbdbl"]
+[gd_scene load_steps=20 format=4 uid="uid://jo6vqavbdbl"]
 
 [ext_resource type="PackedScene" uid="uid://b15tx8w4ae21b" path="res://Scenes/player.tscn" id="1_1kkd2"]
 [ext_resource type="Script" uid="uid://dktc6jdh72bqh" path="res://Scripts/Global.gd" id="1_iqshn"]
 [ext_resource type="Texture2D" uid="uid://con4isi3w0omi" path="res://Assets/floor-temp.png" id="2_ugfji"]
 [ext_resource type="Script" uid="uid://dtdwcbvjcl4js" path="res://Scripts/middle_barrier.gd" id="4_llw6p"]
 [ext_resource type="Script" uid="uid://0d3kblemue4h" path="res://Scripts/Ball.gd" id="5_ugojq"]
-[ext_resource type="Script" uid="uid://bhp4p3j1pv44e" path="res://wall.gd" id="6_4rqys"]
-[ext_resource type="Script" uid="uid://48u68qey37rh" path="res://Scenes/paddle.gd" id="7_iinhh"]
+[ext_resource type="Script" uid="uid://bhp4p3j1pv44e" path="res://Scripts/wall.gd" id="6_4rqys"]
+[ext_resource type="Script" uid="uid://48u68qey37rh" path="res://Scripts/paddle.gd" id="7_iinhh"]
+[ext_resource type="PackedScene" uid="uid://dt0un3o4ps06m" path="res://Scenes/MainUI.tscn" id="8_344ge"]
+[ext_resource type="PackedScene" uid="uid://bop7cldhg6yjo" path="res://Scenes/pause_menu.tscn" id="9_ynf5e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olncf"]
 texture = ExtResource("2_ugfji")
@@ -120,7 +122,7 @@ throw = "throw_2"
 player = -1
 
 [node name="Ball" type="RigidBody2D" parent="."]
-position = Vector2(567, 232)
+position = Vector2(568, 601)
 collision_layer = 2
 mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_lta0x")
@@ -145,6 +147,7 @@ position = Vector2(9, 325)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("6_4rqys")
+wall = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall"]
 position = Vector2(1, -10.5)
@@ -155,6 +158,7 @@ position = Vector2(1142, 313)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("6_4rqys")
+wall = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall"]
 position = Vector2(0.5, 0)
@@ -195,6 +199,15 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(-1.19209e-07, -0.500006)
 scale = Vector2(26.0001, 99)
 mesh = SubResource("QuadMesh_m3feo")
+
+[node name="MainUI" parent="." instance=ExtResource("8_344ge")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_ynf5e")]
+visible = false
+offset_left = -34.0
+offset_top = 38.0
+offset_right = -34.0
+offset_bottom = 38.0
 
 [connection signal="body_entered" from="Middle Barrier" to="Middle Barrier" method="_on_body_entered"]
 [connection signal="body_exited" from="Middle Barrier" to="Middle Barrier" method="_on_body_exited"]
