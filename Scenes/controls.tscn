@@ -21,6 +21,7 @@ grow_vertical = 2
 color = Color(0.203322, 0.203322, 0.203322, 1)
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 287.0
 offset_top = 48.0
 offset_right = 856.0

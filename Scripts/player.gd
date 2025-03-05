@@ -1,22 +1,24 @@
 extends CharacterBody2D
 
-# player movement variables 
-@export var speed: int = 100
-@export var gravity: int = 200 
+# Movement variables
+var gravity: int = 200 
+const SPEED = 100.0
+const JUMP_VELOCITY = -100.0
 
+# Controls (different for each player) 
 @export var jump: String = ""
 @export var left: String = ""
 @export var right: String = ""
 @export var throw: String = ""
 
+# Which direction the ball should be thrown
 @export var player: int 
+
 var istouchingwall: bool = false
 var isholding: bool = false 
 
-const SPEED = 100.0
-const JUMP_VELOCITY = -100.0
-
 func _input(event: InputEvent) -> void:
+	# Processes throwing
 	if event.is_action_pressed(throw) and !Global.paused:
 		if isholding == true:
 			var ball: RigidBody2D = get_node("Ball")
@@ -35,7 +37,6 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		if not (istouchingwall and direction == player): 
 			velocity.x = direction * SPEED
-			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
