@@ -84,7 +84,7 @@ radius = 23.0217
 radius = 23.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhcyr"]
-size = Vector2(19, 629)
+size = Vector2(19, 573)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyskm"]
 size = Vector2(25, 99)
@@ -150,7 +150,7 @@ script = ExtResource("6_4rqys")
 wall = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall"]
-position = Vector2(1, -10.5)
+position = Vector2(1, -46.5)
 shape = SubResource("RectangleShape2D_mhcyr")
 
 [node name="Right Wall" type="Area2D" parent="."]
@@ -161,11 +161,11 @@ script = ExtResource("6_4rqys")
 wall = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall"]
-position = Vector2(0.5, 0)
+position = Vector2(0.5, -30.25)
 shape = SubResource("RectangleShape2D_mhcyr")
 
 [node name="Left Paddle" type="CharacterBody2D" parent="."]
-position = Vector2(60, 324)
+position = Vector2(26, 324)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("7_iinhh")
@@ -183,7 +183,7 @@ scale = Vector2(25, 99)
 mesh = SubResource("QuadMesh_m3feo")
 
 [node name="Right Paddle" type="CharacterBody2D" parent="."]
-position = Vector2(1092, 318)
+position = Vector2(1122, 318)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("7_iinhh")

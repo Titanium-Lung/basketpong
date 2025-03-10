@@ -10,9 +10,9 @@ grow_vertical = 2
 
 [node name="Score label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 253.0
+offset_left = 257.0
 offset_top = 37.0
-offset_right = 873.0
+offset_right = 877.0
 offset_bottom = 205.0
 theme_override_font_sizes/font_size = 50
 text = "0  0"

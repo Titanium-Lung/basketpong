@@ -15,8 +15,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 # Resets position of ball to the correct side 
 func reset_ball(body: Node2D):
-	body.position = Vector2(568 + wall*300, 601)
 	body.linear_velocity = Vector2.ZERO
+	body.position = Vector2(568 + wall*300, 601)
 	#body.set_freeze_enabled(true) ## Might leave this just in case I change something
 
 # Updates score and moves to win scene if someone wins

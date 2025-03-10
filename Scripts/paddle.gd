@@ -3,6 +3,7 @@ extends CharacterBody2D
 # Up and down input values; vary per player's paddle
 @export var up: String = ""
 @export var down: String = ""
+var speed: float = 300
 
 # Initial x position of the paddle
 var locked_x: float
@@ -18,8 +19,8 @@ func _physics_process(_delta: float) -> void:
 	
 	# Move the paddle
 	if Input.is_action_pressed(up):
-		velocity.y -= 200 
+		velocity.y -= speed 
 	elif Input.is_action_pressed(down):
-		velocity.y += 200 
+		velocity.y += speed 
 	
 	move_and_slide()
