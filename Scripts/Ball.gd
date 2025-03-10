@@ -26,6 +26,6 @@ func throw(player: int):
 # @param player	which direction the ball should be thrown
 func moveball(player: int):
 	set_freeze_enabled(false)
-	linear_velocity += Vector2(player * 700, -700)
+	linear_velocity += Vector2(player * 700, -820)
 	holdingPlayer.isholding = false
 	holdingPlayer = null
