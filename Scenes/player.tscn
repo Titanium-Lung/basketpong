@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b15tx8w4ae21b"]
+[gd_scene load_steps=8 format=3 uid="uid://b15tx8w4ae21b"]
 
 [ext_resource type="Script" uid="uid://6a27xel2wog8" path="res://Scripts/player.gd" id="1_aminy"]
 [ext_resource type="Texture2D" uid="uid://cjg3ku0dw151f" path="res://Assets/player1-idle.png" id="2_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://epxacj6p50xc" path="res://Assets/player1-holding.png" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://whhhy33om587" path="res://Assets/player2-holding.png" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://bbjqhhx5tkyeb" path="res://Assets/player2-idle.png" id="4_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnmt3"]
 size = Vector2(59, 131)
@@ -11,18 +13,34 @@ size = Vector2(59, 131)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_cvnsp")
+"texture": ExtResource("3_6t5aa")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle-holding1",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_6t5aa")
+"texture": ExtResource("3_fkybt")
 }],
 "loop": true,
-"name": &"idle-holding",
+"name": &"idle-holding2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cvnsp")
+}],
+"loop": true,
+"name": &"idle1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vgqql")
+}],
+"loop": true,
+"name": &"idle2",
 "speed": 5.0
 }]
 
@@ -37,5 +55,4 @@ shape = SubResource("RectangleShape2D_fnmt3")
 position = Vector2(-1, -1)
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_cvnsp")
-animation = &"idle"
-autoplay = "idle"
+animation = &"idle-holding1"

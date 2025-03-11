@@ -22,10 +22,16 @@ func _ready() -> void:
 		$AnimatedSprite2D.flip_h = true
 
 func animations():
-	if isholding:
-		$AnimatedSprite2D.play("idle-holding")
+	if player == 1:
+		if isholding:
+			$AnimatedSprite2D.play("idle-holding1")
+		else:
+			$AnimatedSprite2D.play("idle1")
 	else:
-		$AnimatedSprite2D.play("idle")
+		if isholding:
+			$AnimatedSprite2D.play("idle-holding2")
+		else:
+			$AnimatedSprite2D.play("idle2")
 
 func _input(event: InputEvent) -> void:
 	# Processes throwing
