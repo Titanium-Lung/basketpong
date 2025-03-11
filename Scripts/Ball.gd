@@ -12,9 +12,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.isholding = true
 		holdingPlayer = body
 
+func _physics_process(_delta: float) -> void:
+	if linear_velocity == Vector2.ZERO:
+		$AnimatedSprite2D.play("idle")
+	else:
+		$AnimatedSprite2D.play("spin")
+
 # Move the ball to the right place (for call_deferred)
 func adjust():
-	position = Vector2(0, -80)
+	position = Vector2(0, -90)
 
 # Make the player throw the ball 
 # @param player	which direction the ball should be thrown
@@ -26,6 +32,6 @@ func throw(player: int):
 # @param player	which direction the ball should be thrown
 func moveball(player: int):
 	set_freeze_enabled(false)
-	linear_velocity += Vector2(player * 700, -820)
+	linear_velocity += Vector2(player * 700, -800)
 	holdingPlayer.isholding = false
 	holdingPlayer = null

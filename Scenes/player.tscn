@@ -1,19 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://b15tx8w4ae21b"]
+[gd_scene load_steps=6 format=3 uid="uid://b15tx8w4ae21b"]
 
 [ext_resource type="Script" uid="uid://6a27xel2wog8" path="res://Scripts/player.gd" id="1_aminy"]
+[ext_resource type="Texture2D" uid="uid://cjg3ku0dw151f" path="res://Assets/player1-idle.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://epxacj6p50xc" path="res://Assets/player1-holding.png" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnmt3"]
-size = Vector2(60, 100)
+size = Vector2(59, 131)
 
-[sub_resource type="QuadMesh" id="QuadMesh_7u80y"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cvnsp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cvnsp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6t5aa")
+}],
+"loop": true,
+"name": &"idle-holding",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_aminy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 5.5)
 shape = SubResource("RectangleShape2D_fnmt3")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0, 1, 1, 1)
-scale = Vector2(60, 101.25)
-mesh = SubResource("QuadMesh_7u80y")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_cvnsp")
+animation = &"idle"
+autoplay = "idle"

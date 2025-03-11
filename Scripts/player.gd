@@ -17,6 +17,16 @@ const JUMP_VELOCITY = -350.0
 var istouchingwall: bool = false
 var isholding: bool = false 
 
+func _ready() -> void:
+	if player == -1:
+		$AnimatedSprite2D.flip_h = true
+
+func animations():
+	if isholding:
+		$AnimatedSprite2D.play("idle-holding")
+	else:
+		$AnimatedSprite2D.play("idle")
+
 func _input(event: InputEvent) -> void:
 	# Processes throwing
 	if event.is_action_pressed(throw) and not Global.paused:
@@ -39,5 +49,6 @@ func _physics_process(delta: float) -> void:
 			velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
+	
+	animations()
 	move_and_slide()

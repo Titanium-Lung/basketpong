@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://jo6vqavbdbl"]
+[gd_scene load_steps=26 format=4 uid="uid://jo6vqavbdbl"]
 
 [ext_resource type="PackedScene" uid="uid://b15tx8w4ae21b" path="res://Scenes/player.tscn" id="1_1kkd2"]
 [ext_resource type="Script" uid="uid://dktc6jdh72bqh" path="res://Scripts/Global.gd" id="1_iqshn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dtdwcbvjcl4js" path="res://Scripts/middle_barrier.gd" id="4_llw6p"]
 [ext_resource type="Script" uid="uid://0d3kblemue4h" path="res://Scripts/Ball.gd" id="5_ugojq"]
 [ext_resource type="Script" uid="uid://bhp4p3j1pv44e" path="res://Scripts/wall.gd" id="6_4rqys"]
+[ext_resource type="Texture2D" uid="uid://drpwagidqaktf" path="res://Assets/ball-spinning.png" id="6_hptm8"]
 [ext_resource type="Script" uid="uid://48u68qey37rh" path="res://Scripts/paddle.gd" id="7_iinhh"]
 [ext_resource type="PackedScene" uid="uid://dt0un3o4ps06m" path="res://Scenes/MainUI.tscn" id="8_344ge"]
 [ext_resource type="PackedScene" uid="uid://bop7cldhg6yjo" path="res://Scenes/pause_menu.tscn" id="9_ynf5e"]
@@ -78,7 +79,53 @@ bounce = 0.5
 [sub_resource type="CircleShape2D" id="CircleShape2D_atu7p"]
 radius = 23.0217
 
-[sub_resource type="SphereMesh" id="SphereMesh_vqlir"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1ilt"]
+atlas = ExtResource("6_hptm8")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iyac"]
+atlas = ExtResource("6_hptm8")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdnlq"]
+atlas = ExtResource("6_hptm8")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkdf5"]
+atlas = ExtResource("6_hptm8")
+region = Rect2(30, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsu2k"]
+atlas = ExtResource("6_hptm8")
+region = Rect2(45, 0, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k12tt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1ilt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iyac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdnlq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkdf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsu2k")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 3.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4t1ar"]
 radius = 23.0
@@ -131,11 +178,10 @@ script = ExtResource("5_ugojq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("CircleShape2D_atu7p")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Ball"]
-modulate = Color(1, 1, 0, 1)
-position = Vector2(6.67572e-06, -2.52724e-05)
-scale = Vector2(46.0522, 46)
-mesh = SubResource("SphereMesh_vqlir")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ball"]
+scale = Vector2(2.86667, 2.86667)
+sprite_frames = SubResource("SpriteFrames_k12tt")
+animation = &"spin"
 
 [node name="Area2D" type="Area2D" parent="Ball"]
 
